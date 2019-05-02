@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/vortex/acpMenu.xsd">
+	<import>
+		<acpmenuitem name="wcf.acp.menu.link.content.raffle">
+			<parent>wcf.acp.menu.link.content</parent>
+		</acpmenuitem>
+		<acpmenuitem name="wcf.acp.menu.link.content.raffle.raffleList">
+			<controller>wcf\acp\page\RaffleListPage</controller>
+			<parent>wcf.acp.menu.link.content.raffle</parent>
+			<permissions>admin.raffle.canManageRaffle</permissions>
+		</acpmenuitem>
+		<acpmenuitem name="wcf.acp.menu.link.content.raffle.raffleList.add">
+			<controller>wcf\acp\form\RaffleAddPage</controller>
+			<parent>wcf.acp.menu.link.content.raffle.raffleList</parent>
+			<permissions>admin.raffle.canManageRaffle</permissions>
+			<icon>fa-plus</icon>
+		</acpmenuitem>
+	</import>
+</data>

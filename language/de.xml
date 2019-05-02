@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/vortex/language.xsd" languagecode="de">
+	<category name="wcf.acl.option">
+		<item name="wcf.acl.option.com.woltlab.wbb.board.canStartRaffle"><![CDATA[Kann Gewinnspiel starten]]></item>
+		<item name="wcf.acl.option.com.woltlab.wbb.board.canParticipantRaffle"><![CDATA[Kann an Gewinnspiel teilnehmen]]></item>
+	</category>
+</language>

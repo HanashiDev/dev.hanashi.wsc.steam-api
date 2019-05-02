@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/vortex/page.xsd">
+	<import>
+		<page identifier="dev.hanashi.wsc.raffle.raffle-page">
+			<pageType>system</pageType>
+			<controller>wcf\page\RafflePage</controller>
+			<!-- <options>hanashi_teamspeak_viewer_identity</options> -->
+			<!-- <permissions>user.teamspeak-viewer.canView</permissions> -->
+			<name language="de"><![CDATA[Gewinnspiel]]></name>
+			<name language="en"><![CDATA[Raffle]]></name>
+			
+			<content language="en">
+				<title><![CDATA[Raffle]]></title>
+			</content>
+			<content language="de">
+				<title><![CDATA[Gewinnspiel]]></title>
+			</content>
+		</page>
+	</import>
+</data>

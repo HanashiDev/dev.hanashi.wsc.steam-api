@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/vortex/option.xsd">
+    <import>
+        <categories>
+            <category name="raffle">
+                <parent />
+            </category>
+            <category name="raffle.general">
+                <parent>raffle</parent>
+            </category>
+        </categories>
+        <options>
+            <option name="hanashi_raffle_show_box_always">
+                <categoryname>raffle.general</categoryname>
+                <optiontype>boolean</optiontype>
+                <defaultvalue>1</defaultvalue>
+            </option>
+        </options>
+    </import>
+</data>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/vortex/box.xsd">
+	<import>
+		<box identifier="dev.hanashi.wsc.RaffleBox">
+			<name language="de">Gewinnspiele</name>
+			<name language="en">Raffles</name>
+			<boxType>system</boxType>
+			<objectType>dev.hanashi.wsc.raffleBox</objectType>
+			<position>sidebarRight</position>
+			<showHeader>1</showHeader>
+			<visibleEverywhere>0</visibleEverywhere>
+			<visibilityExceptions>
+				<page>com.woltlab.wcf.Dashboard</page>
+				<page>com.woltlab.wbb.BoardList</page>
+			</visibilityExceptions>
+			
+			<content language="de">
+				<title>Gewinnspiele</title>
+			</content>
+			<content language="en">
+				<title>Raffles</title>
+			</content>
+		</box>
+	</import>
+</data>

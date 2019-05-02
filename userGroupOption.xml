@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/vortex/userGroupOption.xsd">
+	<import>
+		<categories>
+			<category name="user.raffle">
+				<parent>user</parent>
+			</category>
+			<category name="user.board.raffle">
+				<parent>user.board</parent>
+			</category>
+			<category name="admin.raffle">
+				<parent>admin</parent>
+			</category>
+		</categories>
+		<options>
+			<option name="user.board.canParticipantRaffle">
+				<categoryname>user.board.raffle</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<userdefaultvalue>1</userdefaultvalue>
+			</option>
+			<option name="user.board.canStartRaffle">
+				<categoryname>user.board.raffle</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<userdefaultvalue>1</userdefaultvalue>
+			</option>
+			<option name="user.board.canManageTerms">
+				<categoryname>user.board.raffle</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<moddefaultvalue>1</moddefaultvalue>
+			</option>
+			<option name="user.raffle.canShowGlobalRaffle">
+				<categoryname>user.raffle</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="user.raffle.canParticipantGlobalRaffle">
+				<categoryname>user.raffle</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<userdefaultvalue>1</userdefaultvalue>
+			</option>
+			<option name="user.raffle.canShowParticipants">
+				<categoryname>user.raffle</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<moddefaultvalue>1</moddefaultvalue>
+			</option>
+			<option name="admin.raffle.canManageRaffle">
+				<categoryname>admin.raffle</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+			</option>
+		</options>
+	</import>
+</data>
