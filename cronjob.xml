@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<data xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/vortex/cronjob.xsd">
+<data xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/tornado/cronjob.xsd">
 	<import>
 		<cronjob name="dev.hanashi.wsc.raffle.thread-raffle-cronjob">
 			<classname>wcf\system\cronjob\ThreadRaffleCronjob</classname>
