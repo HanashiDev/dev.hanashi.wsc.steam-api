@@ -33,8 +33,4 @@
         <!-- <instruction type="userGroupOption" /> -->
         <!-- <instruction type="option" /> -->
     </instructions>
-	<instructions type="update" fromversion="1.0.0">
-		<!-- files -->
-        <!-- <instruction type="file" /> -->
-	</instructions>
 </package>
