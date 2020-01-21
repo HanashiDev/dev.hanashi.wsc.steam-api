@@ -1,54 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package name="dev.hanashi.wsc.template1" xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/tornado/package.xsd">
+<package name="dev.hanashi.wsc.steam-api" xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/2019/package.xsd">
     <packageinformation>
-        <packagename><![CDATA[Template]]></packagename>
-        <packagename language="de"><![CDATA[Template]]></packagename>
-        <packagedescription><![CDATA[Template description.]]></packagedescription>
-        <packagedescription language="de"><![CDATA[Template-Beschreibung.]]></packagedescription>
+        <packagename><![CDATA[Steam API]]></packagename>
+        <packagename language="de"><![CDATA[Steam-API]]></packagename>
+        <packagedescription><![CDATA[Api package for Steam.]]></packagedescription>
+        <packagedescription language="de"><![CDATA[API-Paket für Steam.]]></packagedescription>
         <version>1.0.0</version>
-        <date>2019-05-01</date>
+        <date>2020-02-01</date>
     </packageinformation>
 
     <authorinformation>
         <author><![CDATA[Hanashi]]></author>
         <authorurl><![CDATA[https://hanashi.dev/]]></authorurl>
     </authorinformation>
-	
-	<compatibility>
-		<api version="2018" />
-	</compatibility>
 
     <requiredpackages>
-        <requiredpackage minversion="3.1.9">com.woltlab.wcf</requiredpackage>
-        <!-- <requiredpackage minversion="5.1.9">com.woltlab.wbb</requiredpackage> -->
+        <requiredpackage minversion="3.0.0">com.woltlab.wcf</requiredpackage>
     </requiredpackages>
+
+    <excludedPackages>
+        <excludedPackage version="5.3.0 Alpha 1">com.woltlab.wcf</requiredpackage>
+    </excludedPackages>
 
     <instructions type="install">
 		<!-- files -->
-        <!-- <instruction type="file" /> -->
-		
-		<!-- templates -->
-		<!-- <instruction type="template" /> -->
-		<!-- <instruction type="acpTemplate" /> -->
+        <instruction type="file" />
 		
 		<!-- language -->
         <!-- <instruction type="language"/> -->
 		
-		<!-- listener -->
-        <!-- <instruction type="eventListener" /> -->
-		<!-- <instruction type="templateListener" /> -->
-		
 		<!-- config -->
-        <!-- <instruction type="aclOption" /> -->
-        <!-- <instruction type="acpMenu" /> -->
         <!-- <instruction type="userGroupOption" /> -->
-        <!-- <instruction type="cronjob" /> -->
-        <!-- <instruction type="objectType" /> -->
         <!-- <instruction type="option" /> -->
-        <!-- <instruction type="page" /> -->
-        <!-- <instruction type="box" /> -->
-        <!-- <instruction type="userNotificationEvent" /> -->
-        <!-- <instruction type="sql" /> -->
     </instructions>
 	<instructions type="update" fromversion="1.0.0">
 		<!-- files -->
