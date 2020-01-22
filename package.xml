@@ -6,7 +6,7 @@
         <packagedescription><![CDATA[Api package for Steam.]]></packagedescription>
         <packagedescription language="de"><![CDATA[API-Paket für Steam.]]></packagedescription>
         <version>1.0.0</version>
-        <date>2020-02-01</date>
+        <date>2020-01-22</date>
     </packageinformation>
 
     <authorinformation>
@@ -19,7 +19,7 @@
     </requiredpackages>
 
     <excludedpackages>
-        <excludedpackage version="5.3.0 Alpha 1">com.woltlab.wcf</excludedpackage>
+        <excludedpackage version="6.0.0 Alpha 1">com.woltlab.wcf</excludedpackage>
     </excludedpackages>
 
     <instructions type="install">

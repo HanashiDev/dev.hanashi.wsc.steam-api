@@ -12,9 +12,8 @@ use wcf\util\StringUtil;
  * api key can got from here: https://steamcommunity.com/dev/apikey
  * method documentation is from original documentations
  * 
- * @see https://steamcommunity.com/dev
  * @see https://openid.net/specs/openid-authentication-2_0.html
- * @see https://api.steampowered.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/
+ * @see https://api.steampowered.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/?key=<STEAM_API_KEY>
  * 
  * @author Peter Lohse <hanashi@hanashi.eu>
  * @copyright Hanashi Development
@@ -25,12 +24,12 @@ class SteamAPI {
 	/**
 	 * execute a Steam API call
 	 * 
-	 * @var		string			$interface
-	 * @var		string			$method
-	 * @var		int				$version
-	 * @var		array			$data
-	 * @var		bool			$useJSON
-	 * @var		string			$httpmethod
+	 * @var		string			$interface		Steam API interface
+	 * @var		string			$method			API method that should be executed
+	 * @var		int				$version		version of API method
+	 * @var		array			$data			API method parameters
+	 * @var		string			$httpmethod		HTTP method e.g. GET or POST
+	 * @var		bool			$useJSON		use json e.g. for GetOwnedGames
 	 * @return	array/string	returns an array or a string of Steam API answer
 	 */
 	public static function execute(string $interface, string $method, int $version, array $data = [], string $httpmethod = 'GET', bool $useJSON = false) {
