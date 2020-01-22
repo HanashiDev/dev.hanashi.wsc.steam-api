@@ -18,9 +18,9 @@
         <requiredpackage minversion="3.0.0">com.woltlab.wcf</requiredpackage>
     </requiredpackages>
 
-    <excludedPackages>
-        <excludedPackage version="5.3.0 Alpha 1">com.woltlab.wcf</requiredpackage>
-    </excludedPackages>
+    <excludedpackages>
+        <excludedpackage version="5.3.0 Alpha 1">com.woltlab.wcf</excludedpackage>
+    </excludedpackages>
 
     <instructions type="install">
 		<!-- files -->

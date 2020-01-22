@@ -12,7 +12,7 @@
         <options>
             <option name="steam_api_key">
                 <categoryname>steam.api</categoryname>
-                <optiontype>string</optiontype>
+                <optiontype>text</optiontype>
                 <!-- TODO: delete key -->
                 <defaultvalue>411C7A63AF279374C9D8554B898AC0B5</defaultvalue>
             </option>
