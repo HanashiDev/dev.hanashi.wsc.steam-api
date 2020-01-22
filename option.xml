@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<data xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/tornado/option.xsd">
+<data xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/2019/option.xsd">
     <import>
         <categories>
-            <category name="raffle">
+            <category name="steam">
                 <parent />
             </category>
-            <category name="raffle.general">
-                <parent>raffle</parent>
+            <category name="steam.api">
+                <parent>steam</parent>
             </category>
         </categories>
         <options>
-            <option name="hanashi_raffle_show_box_always">
-                <categoryname>raffle.general</categoryname>
-                <optiontype>boolean</optiontype>
-                <defaultvalue>1</defaultvalue>
+            <option name="steam_api_key">
+                <categoryname>steam.api</categoryname>
+                <optiontype>string</optiontype>
+                <!-- TODO: delete key -->
+                <defaultvalue>411C7A63AF279374C9D8554B898AC0B5</defaultvalue>
             </option>
         </options>
     </import>

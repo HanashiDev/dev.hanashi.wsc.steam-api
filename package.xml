@@ -27,10 +27,10 @@
         <instruction type="file" />
 		
 		<!-- language -->
-        <!-- <instruction type="language"/> -->
+        <instruction type="language"/>
 		
 		<!-- config -->
-        <!-- <instruction type="userGroupOption" /> -->
-        <!-- <instruction type="option" /> -->
+        <instruction type="userGroupOption" />
+        <instruction type="option" />
     </instructions>
 </package>
