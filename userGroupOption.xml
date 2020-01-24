@@ -2,15 +2,20 @@
 <data xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/2019/userGroupOption.xsd">
 	<import>
 		<categories>
-			<category name="user.steam">
+			<category name="user.ha_steam">
 				<parent>user</parent>
 			</category>
-			<category name="mod.steam">
+			<category name="mod.ha_steam">
 				<parent>mod</parent>
 			</category>
-			<category name="admin.steam">
+			<category name="admin.ha_steam">
 				<parent>admin</parent>
 			</category>
 		</categories>
 	</import>
+	<delete>
+		<category name="user.steam" />
+		<category name="mod.steam" />
+		<category name="admin.steam" />
+	</delete>
 </data>

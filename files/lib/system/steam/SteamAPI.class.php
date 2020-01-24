@@ -13,7 +13,7 @@ use wcf\util\StringUtil;
  * method documentation is from original documentations
  * 
  * @see https://openid.net/specs/openid-authentication-2_0.html
- * @see https://api.steampowered.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/?key=<STEAM_API_KEY>
+ * @see https://api.steampowered.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/?key=<HA_STEAM_API_KEY>
  * 
  * @author Peter Lohse <hanashi@hanashi.eu>
  * @copyright Hanashi Development
@@ -33,11 +33,11 @@ class SteamAPI {
 	 * @return	array/string	returns an array or a string of Steam API answer
 	 */
 	public static function execute(string $interface, string $method, int $version, array $data = [], string $httpmethod = 'GET', bool $useJSON = false) {
-		if (!STEAM_API_KEY) throw new SteamException('Steam API key not configured.');
+		if (!HA_STEAM_API_KEY) throw new SteamException('Steam API key not configured.');
 
 		$parameters = [
 			'format' => 'json',
-			'key' => STEAM_API_KEY
+			'key' => HA_STEAM_API_KEY
 		];
 		if ($useJSON && count($data)) {
 			$parameters['input_json'] = JSON::encode($data);

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/2019/language.xsd" languagecode="en">
 	<category name="wcf.acp.option">
-		<item name="wcf.acp.option.category.steam"><![CDATA[Steam]]></item>
-		<item name="wcf.acp.option.category.steam.api"><![CDATA[API]]></item>
-		<item name="wcf.acp.option.steam_api_key"><![CDATA[Web API Key]]></item>
-		<item name="wcf.acp.option.steam_api_key.description"><![CDATA[Before using the Steam API, the API key must be inserted. The API key can be retrieved <a href="https://steamcommunity.com/dev/apikey" class="externalURL" rel="nofollow"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>here</a>.]]></item>
+		<item name="wcf.acp.option.category.ha_steam"><![CDATA[Steam]]></item>
+		<item name="wcf.acp.option.category.ha_steam.api"><![CDATA[API]]></item>
+		<item name="wcf.acp.option.ha_steam_api_key"><![CDATA[Web API Key]]></item>
+		<item name="wcf.acp.option.ha_steam_api_key.description"><![CDATA[Before using the Steam API, the API key must be inserted. The API key can be retrieved <a href="https://steamcommunity.com/dev/apikey" class="externalURL" rel="nofollow"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>here</a>.]]></item>
 	</category>
 	<category name="wcf.acp.group">
-		<item name="wcf.acp.group.option.category.user.steam"><![CDATA[Steam]]></item>
-		<item name="wcf.acp.group.option.category.mod.steam"><![CDATA[Steam]]></item>
-		<item name="wcf.acp.group.option.category.admin.steam"><![CDATA[Steam]]></item>
+		<item name="wcf.acp.group.option.category.user.ha_steam"><![CDATA[Steam]]></item>
+		<item name="wcf.acp.group.option.category.mod.ha_steam"><![CDATA[Steam]]></item>
+		<item name="wcf.acp.group.option.category.admin.ha_steam"><![CDATA[Steam]]></item>
 	</category>
 </language>
