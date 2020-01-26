@@ -13,9 +13,4 @@
 			</category>
 		</categories>
 	</import>
-	<delete>
-		<category name="user.steam" />
-		<category name="mod.steam" />
-		<category name="admin.steam" />
-	</delete>
 </data>

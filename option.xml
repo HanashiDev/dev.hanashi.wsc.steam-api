@@ -13,14 +13,7 @@
             <option name="ha_steam_api_key">
                 <categoryname>ha_steam.api</categoryname>
                 <optiontype>text</optiontype>
-                <!-- TODO: delete key -->
-                <defaultvalue>411C7A63AF279374C9D8554B898AC0B5</defaultvalue>
             </option>
         </options>
     </import>
-    <delete>
-        <category name="steam.api" />
-        <category name="steam" />
-        <option name="steam_api_key" />
-    </delete>
 </data>
