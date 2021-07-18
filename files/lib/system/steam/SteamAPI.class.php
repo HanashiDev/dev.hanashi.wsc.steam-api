@@ -2,10 +2,11 @@
 
 namespace wcf\system\steam;
 
+use GuzzleHttp\Exception\BadResponseException;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Psr7\Request;
 use wcf\system\exception\SteamException;
-use wcf\system\exception\SystemException;
-use wcf\util\exception\HTTPException;
-use wcf\util\HTTPRequest;
+use wcf\system\io\HttpFactory;
 use wcf\util\JSON;
 use wcf\util\StringUtil;
 
@@ -54,30 +55,38 @@ class SteamAPI
         $apiURL = 'http://api.steampowered.com/' . $interface . '/' . $method . '/v' . $version . '/';
 
         $postParameters = [];
+        $headers = [];
         if ($httpmethod == 'GET') {
             $apiURL .= '?' . http_build_query($parameters, '', '&');
         } else {
             $postParameters = $parameters;
+            $headers['content-type'] = 'application/x-www-form-urlencoded';
         }
 
-        $request = new HTTPRequest($apiURL, ['method' => $httpmethod], $postParameters);
+        $request = new Request($httpmethod, $apiURL, $headers, http_build_query($postParameters, '', '&'));
         try {
-            $request->execute();
-            $reply = $request->getReply();
+            $response = HttpFactory::getDefaultClient()->send($request);
+            $content = (string)$response->getBody();
             try {
-                return JSON::decode($reply['body'], true);
-            } catch (SystemException $e) {
-                return $reply['body'];
+                return JSON::decode($content, true);
+            } catch (\Exception $e) {
+                return $content;
             }
-        } catch (HTTPException $e) {
+        } catch (BadResponseException $e) {
+            if (\ENABLE_DEBUG_MODE) {
+                \wcf\functions\exception\logThrowable($e);
+            }
+            $content = (string)$e->getResponse()->getBody();
+            try {
+                return JSON::decode($content, true);
+            } catch (\Exception $e) {
+                return $content;
+            }
+        } catch (GuzzleException $e) {
+            if (\ENABLE_DEBUG_MODE) {
+                \wcf\functions\exception\logThrowable($e);
+            }
             throw new SteamException('Wrong Steam API call or Steam API is not reachable. (Message: ' . $e->getMessage() . ')');
-        } catch (SystemException $e) {
-            $reply = $request->getReply();
-            try {
-                return JSON::decode($reply['body'], true);
-            } catch (SystemException $e) {
-                return $reply['body'];
-            }
         }
     }
 
@@ -119,11 +128,23 @@ class SteamAPI
             }
         }
         $params['openid.mode'] = 'check_authentication';
+        $parameters = \http_build_query($params, "", '&');
 
-        $request = new HTTPRequest('https://steamcommunity.com/openid/login', [], $params);
-        $request->execute();
-        $reply = $request->getReply();
-        $content = $reply['body'];
+        $headers = [
+            'content-type' => 'application/x-www-form-urlencoded'
+        ];
+
+        $request = new Request('POST', 'https://steamcommunity.com/openid/login', $headers, $parameters);
+        $content = '';
+        try {
+            $response = HttpFactory::getDefaultClient()->send($request);
+            $content = (string)$response->getBody();
+        } catch (\Exception $e) {
+            if (\ENABLE_DEBUG_MODE) {
+                \wcf\functions\exception\logThrowable($e);
+            }
+            throw new SteamException('API error - ' . $e->getMessage());
+        }
 
         if (strpos($content, 'is_valid:true') === false) {
             throw new SteamException('Invalid authentication');
