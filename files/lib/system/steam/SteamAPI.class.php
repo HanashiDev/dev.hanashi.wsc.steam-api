@@ -55,7 +55,7 @@ class SteamAPI
 
         $postParameters = [];
         if ($httpmethod == 'GET') {
-            $apiURL .= '?' . http_build_query($parameters, null, '&');
+            $apiURL .= '?' . http_build_query($parameters, '', '&');
         } else {
             $postParameters = $parameters;
         }
@@ -100,7 +100,7 @@ class SteamAPI
             'openid.claimed_id' => 'http://specs.openid.net/auth/2.0/identifier_select',
             'openid.identity' => 'http://specs.openid.net/auth/2.0/identifier_select'
         ];
-        return 'https://steamcommunity.com/openid/login?' . http_build_query($data, null, '&');
+        return 'https://steamcommunity.com/openid/login?' . http_build_query($data, '', '&');
     }
 
     /**
