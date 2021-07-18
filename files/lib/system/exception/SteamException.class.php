@@ -1,4 +1,5 @@
 <?php
+
 namespace wcf\system\exception;
 
 /**
@@ -6,7 +7,9 @@ namespace wcf\system\exception;
 *
 * @author Peter Lohse <hanashi@hanashi.eu>
 * @copyright Hanashi Development
-* @license	Freie Lizenz (https://hanashi.eu/freie-lizenz/)
-* @package	WoltLabSuite\Core\System\Exception
+* @license  Freie Lizenz (https://hanashi.eu/freie-lizenz/)
+* @package  WoltLabSuite\Core\System\Exception
 */
-class SteamException extends SystemException {}
+class SteamException extends SystemException
+{
+}
