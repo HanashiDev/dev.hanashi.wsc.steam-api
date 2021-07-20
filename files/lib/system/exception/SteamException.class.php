@@ -10,6 +10,6 @@ namespace wcf\system\exception;
 * @license  Freie Lizenz (https://hanashi.eu/freie-lizenz/)
 * @package  WoltLabSuite\Core\System\Exception
 */
-class SteamException extends SystemException
+class SteamException extends \Exception
 {
 }
