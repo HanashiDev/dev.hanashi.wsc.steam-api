@@ -2,6 +2,7 @@
 
 namespace wcf\system\steam;
 
+use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
@@ -25,6 +26,20 @@ use wcf\util\StringUtil;
  */
 class SteamAPI
 {
+    /**
+     * @var ClientInterface
+     */
+    private static $httpClient;
+
+    final public static function getHttpClient(): ClientInterface
+    {
+        if (!self::$httpClient) {
+            self::$httpClient = HttpFactory::makeClient();
+        }
+
+        return self::$httpClient;
+    }
+
     /**
      * execute a Steam API call
      *
@@ -65,7 +80,7 @@ class SteamAPI
 
         $request = new Request($httpmethod, $apiURL, $headers, http_build_query($postParameters, '', '&'));
         try {
-            $response = HttpFactory::getDefaultClient()->send($request);
+            $response = self::getHttpClient()->send($request);
             $content = (string)$response->getBody();
             try {
                 return JSON::decode($content, true);
@@ -137,7 +152,7 @@ class SteamAPI
         $request = new Request('POST', 'https://steamcommunity.com/openid/login', $headers, $parameters);
         $content = '';
         try {
-            $response = HttpFactory::getDefaultClient()->send($request);
+            $response = self::getHttpClient()->send($request);
             $content = (string)$response->getBody();
         } catch (\Exception $e) {
             if (\ENABLE_DEBUG_MODE) {
