@@ -148,7 +148,7 @@ class SteamAPI
     {
         $params = [];
         foreach ($_GET as $key => $val) {
-            if (StringUtil::startsWith($key, 'openid')) {
+            if (\str_starts_with($key, 'openid')) {
                 $newKey = 'openid.' . \substr($key, 7);
                 $params[$newKey] = $val;
             }
