@@ -10,7 +10,6 @@ use GuzzleHttp\Psr7\Request;
 use wcf\system\exception\SteamException;
 use wcf\system\io\HttpFactory;
 use wcf\util\JSON;
-use wcf\util\StringUtil;
 
 /**
  * Steam Web Api class
