@@ -122,6 +122,7 @@ class SteamAPI
      *                                  the status of the request.
      * @var     string  $realm          URL pattern the OP SHOULD ask the end user to trust.
      * @return  string
+     * @deprecated
      */
     public static function getOpenIDUrl(string $redirectUri, string $realm): string
     {
@@ -142,6 +143,7 @@ class SteamAPI
      *
      * @var     array   $data   content of $_GET by redirect uri, where prefix is "openid."
      * @return  int     64 bit of SteamID
+     * @deprecated
      */
     public static function validateOpenID(): int
     {
