@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<data xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/2019/option.xsd">
-    <import>
-        <categories>
-            <category name="ha_steam">
-                <parent />
-            </category>
-            <category name="ha_steam.api">
-                <parent>ha_steam</parent>
-            </category>
-        </categories>
-        <options>
-            <option name="ha_steam_api_key">
-                <categoryname>ha_steam.api</categoryname>
-                <optiontype>text</optiontype>
-            </option>
-        </options>
-    </import>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/2019/option.xsd">
+	<import>
+		<categories>
+			<category name="ha_steam">
+				<parent/>
+			</category>
+			<category name="ha_steam.api">
+				<parent>ha_steam</parent>
+			</category>
+		</categories>
+		<options>
+			<option name="ha_steam_api_key">
+				<categoryname>ha_steam.api</categoryname>
+				<optiontype>text</optiontype>
+			</option>
+		</options>
+	</import>
 </data>
