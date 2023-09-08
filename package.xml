@@ -1,41 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package name="dev.hanashi.wsc.steam-api" xmlns="https://www.woltlab.com" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.woltlab.com https://www.woltlab.com/XSD/2019/package.xsd">
-    <packageinformation>
-        <packagename><![CDATA[Steam API]]></packagename>
-        <packagename language="de"><![CDATA[Steam-API]]></packagename>
-        <packagedescription><![CDATA[Api package for Steam.]]></packagedescription>
-        <packagedescription language="de"><![CDATA[API-Paket für Steam.]]></packagedescription>
-        <version>1.1.1</version>
-        <date>2021-07-21</date>
-    </packageinformation>
-
-    <authorinformation>
-        <author><![CDATA[Hanashi Development]]></author>
-        <authorurl><![CDATA[https://hanashi.dev/]]></authorurl>
-    </authorinformation>
-
-    <requiredpackages>
-        <requiredpackage minversion="5.3.0">com.woltlab.wcf</requiredpackage>
-    </requiredpackages>
-
-    <excludedpackages>
-        <excludedpackage version="6.0.0 Alpha 1">com.woltlab.wcf</excludedpackage>
-    </excludedpackages>
-
-    <instructions type="install">
-		<!-- files -->
-        <instruction type="file" />
-		
-		<!-- language -->
-        <instruction type="language"/>
-		
-		<!-- config -->
-        <instruction type="userGroupOption" />
-        <instruction type="option" />
-    </instructions>
-
-    <instructions type="update" fromversion="1.1.0">
-		<!-- files -->
-        <instruction type="file" />
-    </instructions>
+<package xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/5.4/package.xsd" name="dev.hanashi.wsc.steam-api">
+	<packageinformation>
+		<!-- dev.hanashi.wsc.steam-api -->
+		<packagename>Steam API</packagename>
+		<packagename language="de">Steam-API</packagename>
+		<packagedescription>Api package for Steam.</packagedescription>
+		<packagedescription language="de">API-Paket für Steam.</packagedescription>
+		<version>1.2.0</version>
+		<date>2023-09-08</date>
+	</packageinformation>
+	<authorinformation>
+		<author>Hanashi Development</author>
+		<authorurl>https://hanashi.dev/</authorurl>
+	</authorinformation>
+	<requiredpackages>
+		<requiredpackage minversion="5.5.14">com.woltlab.wcf</requiredpackage>
+	</requiredpackages>
+	<excludedpackages>
+		<excludedpackage version="7.0.0 Alpha 1">com.woltlab.wcf</excludedpackage>
+	</excludedpackages>
+	<instructions type="install">
+		<instruction type="file"/>
+		<instruction type="language"/>
+		<instruction type="userGroupOption"/>
+		<instruction type="option"/>
+	</instructions>
+	<instructions type="update" fromversion="1.1.1">
+		<instruction type="file"/>
+	</instructions>
 </package>
