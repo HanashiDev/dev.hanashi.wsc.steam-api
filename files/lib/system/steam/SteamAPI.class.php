@@ -24,7 +24,7 @@ use wcf\util\JSON;
  * @license Freie Lizenz (https://hanashi.dev/freie-lizenz/)
  * @package WoltLabSuite\Core\System\Steam
  */
-class SteamAPI
+final class SteamAPI
 {
     /**
      * @var ClientInterface

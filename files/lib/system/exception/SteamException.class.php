@@ -12,6 +12,6 @@ use Exception;
 * @license  Freie Lizenz (https://hanashi.eu/freie-lizenz/)
 * @package  WoltLabSuite\Core\System\Exception
 */
-class SteamException extends Exception
+final class SteamException extends Exception
 {
 }
