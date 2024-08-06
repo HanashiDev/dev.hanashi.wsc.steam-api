@@ -31,7 +31,7 @@ final class SteamAPI
      */
     private static $httpClient;
 
-    final public static function getHttpClient(): ClientInterface
+    public static function getHttpClient(): ClientInterface
     {
         if (!self::$httpClient) {
             self::$httpClient = HttpFactory::makeClient();
