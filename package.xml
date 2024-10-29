@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/5.4/package.xsd" name="dev.hanashi.wsc.steam-api">
+<package xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/6.0/package.xsd" name="dev.hanashi.wsc.steam-api">
 	<packageinformation>
 		<!-- dev.hanashi.wsc.steam-api -->
 		<packagename>Steam API</packagename>
 		<packagename language="de">Steam-API</packagename>
 		<packagedescription>Api package for Steam.</packagedescription>
 		<packagedescription language="de">API-Paket für Steam.</packagedescription>
-		<version>1.2.0</version>
-		<date>2023-09-08</date>
+		<version>1.2.1</version>
+		<date>2024-10-29</date>
 	</packageinformation>
 	<authorinformation>
 		<author>Hanashi Development</author>
@@ -25,7 +25,7 @@
 		<instruction type="userGroupOption"/>
 		<instruction type="option"/>
 	</instructions>
-	<instructions type="update" fromversion="1.1.1">
+	<instructions type="update" fromversion="1.2.0">
 		<instruction type="file"/>
 	</instructions>
 </package>

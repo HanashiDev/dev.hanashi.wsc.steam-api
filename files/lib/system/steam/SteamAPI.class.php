@@ -24,14 +24,14 @@ use wcf\util\JSON;
  * @license Freie Lizenz (https://hanashi.dev/freie-lizenz/)
  * @package WoltLabSuite\Core\System\Steam
  */
-class SteamAPI
+final class SteamAPI
 {
     /**
      * @var ClientInterface
      */
     private static $httpClient;
 
-    final public static function getHttpClient(): ClientInterface
+    public static function getHttpClient(): ClientInterface
     {
         if (!self::$httpClient) {
             self::$httpClient = HttpFactory::makeClient();
