@@ -1,7 +1,6 @@
 <?php
 $finder = PhpCsFixer\Finder::create()
-    ->in(__DIR__.'/files/')
-    ->notPath('lib/system/api');
+    ->in(__DIR__.'/files/');
 
 return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)
@@ -63,7 +62,7 @@ return (new PhpCsFixer\Config())
         'return_type_declaration' => true,
         'static_lambda' => true,
 
-        'fully_qualified_strict_types' => true,
+        'fully_qualified_strict_types' => ['leading_backslash_in_global_namespace' => true],
         'no_leading_import_slash' => true,
         'no_unused_imports' => true,
         'ordered_imports' => true,
@@ -116,14 +115,5 @@ return (new PhpCsFixer\Config())
         'method_chaining_indentation' => true,
         'no_extra_blank_lines' => ['tokens' => ['case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'square_brace_block', 'switch', 'throw', 'use']],
         'no_spaces_around_offset' => true,
-
-        'global_namespace_import' => [
-            'import_classes' => true,
-            'import_constants' => false,
-            'import_functions' => false,
-        ],
-        'ordered_imports' => [
-            'imports_order' => ['class', 'function', 'const'],
-        ],
     ])
     ->setFinder($finder);
