@@ -2,3 +2,4 @@
 *.tar.gz
 *.cache
 .phpcs-cache
+.DS_Store
