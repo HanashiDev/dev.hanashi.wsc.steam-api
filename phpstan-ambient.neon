@@ -1,0 +1,3 @@
+parameters:
+    dynamicConstantNames:
+        - HA_STEAM_API_KEY

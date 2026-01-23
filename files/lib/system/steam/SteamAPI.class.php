@@ -2,7 +2,6 @@
 
 namespace wcf\system\steam;
 
-use Exception;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Exception\GuzzleException;
@@ -26,14 +25,11 @@ use wcf\util\JSON;
  */
 final class SteamAPI
 {
-    /**
-     * @var ClientInterface
-     */
-    private static $httpClient;
+    private static ClientInterface $httpClient;
 
     public static function getHttpClient(): ClientInterface
     {
-        if (!self::$httpClient) {
+        if (!isset(self::$httpClient)) {
             self::$httpClient = HttpFactory::makeClient();
         }
 
@@ -43,13 +39,13 @@ final class SteamAPI
     /**
      * execute a Steam API call
      *
-     * @var     string          $interface      Steam API interface
-     * @var     string          $method         API method that should be executed
-     * @var     int             $version        version of API method
-     * @var     array           $data           API method parameters
-     * @var     string          $httpmethod     HTTP method e.g. GET or POST
-     * @var     bool            $useJSON        use json e.g. for GetOwnedGames
-     * @return  array/string    returns an array or a string of Steam API answer
+     * @param     string          $interface      Steam API interface
+     * @param     string          $method         API method that should be executed
+     * @param     int             $version        version of API method
+     * @param     array<mixed>    $data           API method parameters
+     * @param     string          $httpmethod     HTTP method e.g. GET or POST
+     * @param     bool            $useJSON        use json e.g. for GetOwnedGames
+     * @return  array<mixed>|string returns an array or a string of Steam API answer
      */
     public static function execute(
         string $interface,
@@ -58,7 +54,7 @@ final class SteamAPI
         array $data = [],
         string $httpmethod = 'GET',
         bool $useJSON = false
-    ) {
+    ): array|string {
         if (!\HA_STEAM_API_KEY) {
             throw new SteamException('Steam API key not configured.');
         }
@@ -90,7 +86,7 @@ final class SteamAPI
             $content = (string)$response->getBody();
             try {
                 return JSON::decode($content, true);
-            } catch (Exception $e) {
+            } catch (\Throwable) {
                 return $content;
             }
         } catch (BadResponseException $e) {
@@ -100,7 +96,7 @@ final class SteamAPI
             $content = (string)$e->getResponse()->getBody();
             try {
                 return JSON::decode($content, true);
-            } catch (Exception $e) {
+            } catch (\Throwable) {
                 return $content;
             }
         } catch (GuzzleException $e) {
@@ -118,9 +114,9 @@ final class SteamAPI
     /**
      * get OpenID login url
      *
-     * @var     string  $redirectUri    URL to which the OP SHOULD return the User-Agent with the response indicating
+     * @param     string  $redirectUri    URL to which the OP SHOULD return the User-Agent with the response indicating
      *                                  the status of the request.
-     * @var     string  $realm          URL pattern the OP SHOULD ask the end user to trust.
+     * @param     string  $realm          URL pattern the OP SHOULD ask the end user to trust.
      * @return  string
      * @deprecated
      */
@@ -141,7 +137,6 @@ final class SteamAPI
     /**
      * validate OpenID data and returns SteamID
      *
-     * @var     array   $data   content of $_GET by redirect uri, where prefix is "openid."
      * @return  int     64 bit of SteamID
      * @deprecated
      */
@@ -166,7 +161,7 @@ final class SteamAPI
         try {
             $response = self::getHttpClient()->send($request);
             $content = (string)$response->getBody();
-        } catch (Exception $e) {
+        } catch (\Throwable $e) {
             if (\ENABLE_DEBUG_MODE) {
                 \wcf\functions\exception\logThrowable($e);
             }
@@ -186,10 +181,10 @@ final class SteamAPI
         ) {
             throw new SteamException('Invalid Steam ID');
         }
-        if (empty($matches[1] || !\is_numeric($matches[1]))) {
+        if (empty($matches[1])) {
             throw new SteamException('Invalid Steam ID');
         }
 
-        return $matches[1];
+        return (int)$matches[1];
     }
 }

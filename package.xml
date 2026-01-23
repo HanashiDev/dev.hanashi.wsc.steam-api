@@ -6,15 +6,15 @@
 		<packagename language="de">Steam-API</packagename>
 		<packagedescription>Api package for Steam.</packagedescription>
 		<packagedescription language="de">API-Paket für Steam.</packagedescription>
-		<version>1.2.1</version>
-		<date>2024-10-29</date>
+		<version>1.3.0</version>
+		<date>2026-01-23</date>
 	</packageinformation>
 	<authorinformation>
 		<author>Hanashi Development</author>
 		<authorurl>https://hanashi.dev/</authorurl>
 	</authorinformation>
 	<requiredpackages>
-		<requiredpackage minversion="5.5.14">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="6.2.0 RC 3">com.woltlab.wcf</requiredpackage>
 	</requiredpackages>
 	<excludedpackages>
 		<excludedpackage version="7.0.0 Alpha 1">com.woltlab.wcf</excludedpackage>
@@ -25,7 +25,7 @@
 		<instruction type="userGroupOption"/>
 		<instruction type="option"/>
 	</instructions>
-	<instructions type="update" fromversion="1.2.0">
+	<instructions type="update" fromversion="1.2.*">
 		<instruction type="file"/>
 	</instructions>
 </package>
